@@ -26,22 +26,32 @@
                 id="animated-marker"
                 type="pattern"
                 preset="custom"
-                url="assets/marker.patt"
+                url="assets/pattern-cat.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <!--
-                <a-image
-                    src="assets/asset2x.gif"
-                    scale="1 1 1"
-                    class="clickable"
+                <a-entity 
+                    geometry="primitive:plane;"
                     rotation="-90 0 0"
-                    gesture-handler
-                ></a-image>
-                -->
-                <a-entity geometry="primitive:plane;" material="shader:gif;src:url(assets/asset2x.gif);opacity:1"></a-entity>
+                    material="shader:gif;src:url(assets/cat.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-yacht.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/yacht.gif);opacity:1"></a-entity>
             </a-marker>
 
             <a-entity camera></a-entity>
