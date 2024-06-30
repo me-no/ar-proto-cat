@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+
+        <!-- jQuery -->
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+            crossorigin="anonymous">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        
+        <!-- to load gifs -->
+        <!--
+        <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+        -->
+        <script src="dist/aframe-gif-shader.min.js"></script>
+    </head>
+
+
+    <script>
+        //cookieセット
+        $.cookie('stamp_kabutomushi', 1, { expires: 1, path: '/' });
+    </script>
+
+    <body style="margin: 0; overflow: hidden;">
+        <a-scene
+            vr-mode-ui="enabled: false;"
+            loading-screen="enabled: false;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            id="scene"
+            embedded
+            gesture-detector
+        >
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-h32-beetle-white.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+            <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/h32-beetle.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <!-- 完成したもの　ここまで -->
+
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>

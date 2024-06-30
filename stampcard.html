@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+        <!-- to load gifs -->
+        <!--
+        <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+        -->
+        <script src="dist/aframe-gif-shader.min.js"></script>
+
+        <!-- jQuery -->
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+            crossorigin="anonymous">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+        <title>ARスタンプラリー | 夏休みドット絵大作戦</title>
+    </head>
+
+    <body style="margin: 0; overflow: hidden;">
+
+        <h1>ドット絵×AR<br />スタンプラリー(β版)</h1>
+
+        <div class="stamp-wrapper">
+            <div class="stamp">
+                <h3>カブトムシ</h3>
+                <a href="./kabutomushi.html">
+                    <img id="kabutomushi" src="/assets/stamp/beetle-before.png" />
+                </a>
+            </div>
+
+            <div class="stamp">
+                <h3>カブトムシ</h3>
+                <a href="">
+                    <img src="/assets/stamp/beetle-before.png" />
+                </a>
+            </div>
+
+            <div class="stamp">
+                <h3>カブトムシ</h3>
+                <a href="">
+                    <img src="/assets/stamp/beetle-before.png" />
+                </a>
+            </div>
+
+            <div class="stamp">
+                <h3>カブトムシ</h3>
+                <a href="">
+                    <img src="/assets/stamp/beetle-before.png" />
+                </a>
+            </div>
+
+            <div class="stamp">
+                <h3>カブトムシ</h3>
+                <a href="">
+                    <img src="/assets/stamp/beetle-before.png" />
+                </a>
+            </div>
+
+        </div>
+
+    </body>
+
+    <script>
+    //cookie取得したら、画像パスを変更する
+    if( $.cookie('stamp_kabutomushi') == 1 ){
+        $('#kabutomushi').attr('src', "/assets/stamp/h32-beetle-white.png");
+        
+        //ボタンクリックでcookieを消す
+        /*
+        $('button').click(function () {
+            $.cookie('stamp', '', { expires: 1, path: '/'});
+            location.reload();
+        });
+        */
+    }
+    </script>
+    
+    <style type="text/css">
+        h1 {
+            font-family: "Zen Maru Gothic";
+            text-align:center;
+        }
+        .stamp-wrapper {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .stamp {
+            width:fit-content;
+            width: calc(100% / 3);
+            margin-bottom:32px;
+        }
+        h3 {
+            margin:0 auto 0 auto;
+            text-align: center;
+            background-color: #fff;
+            width:fit-content;
+        }
+        a {
+            width: fit-content;
+            height: fit-content;
+            border: solid 8px #000000;
+            border-radius: 4px;
+            display: block;
+            padding: 8px;
+            margin:auto;
+        }
+        .stamp img {
+            width:80px;
+            height:80px;
+        }
+    </style>
+</html>
