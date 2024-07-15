@@ -24,11 +24,12 @@
             gesture-detector
         >
 
+            <!-- プロトタイプ -->
 
             <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/pattern-cat.patt"
+                url="assets/pattern-ar-cat.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -43,7 +44,7 @@
             <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/pattern-yacht.patt"
+                url="assets/pattern-ar-yacht.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -55,6 +56,20 @@
                     material="shader:gif;src:url(assets/yacht.gif);opacity:1"></a-entity>
             </a-marker>
 
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-ar-firefly.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                
+            >
+                <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/ar-firefly.gif);opacity:1"></a-entity>
+            </a-marker>
 
             <!-- 完成したもの -->
 
@@ -162,6 +177,8 @@
                     material="shader:gif;src:url(assets/h31-ring.gif);opacity:1"></a-entity>
             </a-marker>
 
+            <!-- ギターと被るので保留 -->
+            <!--
             <a-marker
                 type="pattern"
                 preset="custom"
@@ -175,6 +192,7 @@
                     rotation="-90 0 0"
                     material="shader:gif;src:url(assets/h32-beetle.gif);opacity:1"></a-entity>
             </a-marker>
+            -->
 
             <a-marker
                 type="pattern"

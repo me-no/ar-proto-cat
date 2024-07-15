@@ -7,27 +7,12 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
 
-        <!-- jQuery -->
-        <script
-            src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
-            crossorigin="anonymous">
-        </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-        
         <!-- to load gifs -->
         <!--
         <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
         -->
         <script src="dist/aframe-gif-shader.min.js"></script>
     </head>
-
-
-    <script>
-        //cookieセット
-        $.cookie('stamp', 1, { expires: 1, path: '/' });
-    </script>
 
     <body style="margin: 0; overflow: hidden;">
         <a-scene
@@ -39,11 +24,12 @@
             gesture-detector
         >
 
+            <!-- プロトタイプ -->
 
             <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/pattern-cat.patt"
+                url="assets/pattern-ar-cat.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -58,7 +44,7 @@
             <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/pattern-yacht.patt"
+                url="assets/pattern-ar-yacht.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -70,6 +56,20 @@
                     material="shader:gif;src:url(assets/yacht.gif);opacity:1"></a-entity>
             </a-marker>
 
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-ar-firefly.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                
+            >
+                <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/ar-firefly.gif);opacity:1"></a-entity>
+            </a-marker>
 
             <!-- 完成したもの -->
 
@@ -177,6 +177,8 @@
                     material="shader:gif;src:url(assets/h31-ring.gif);opacity:1"></a-entity>
             </a-marker>
 
+            <!-- ギターと被るので保留 -->
+            <!--
             <a-marker
                 type="pattern"
                 preset="custom"
@@ -190,6 +192,7 @@
                     rotation="-90 0 0"
                     material="shader:gif;src:url(assets/h32-beetle.gif);opacity:1"></a-entity>
             </a-marker>
+            -->
 
             <a-marker
                 type="pattern"
@@ -583,5 +586,45 @@
 
             <a-entity camera></a-entity>
         </a-scene>
+
+
+        <div class="msg-wrapper">
+            <p>▼　マーカーを　カメラで　見てみよう　▼</p>
+        </div>
+        <div class="btn-wrapper">
+            <button id="btn" rotation="45 0 0">test</button>
+        </div>
+
     </body>
+
+    <style>
+        .msg-wrapper {
+            background-color:rgba(255,255,255,0.5);
+            position: absolute;
+            display:flex;
+            flex-direction:column;
+            top:3%;
+            left:5%;
+            width:90%;
+            padding:32px 16px;
+            border:solid 4px rgba(0,0,0,0.5);
+        }
+        .msg-wrapper p {
+            margin:auto;
+        }
+
+        .btn-wrapper {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            bottom: 3%;
+            left: 3%;
+        }
+        #btn {
+            width:64px;
+            height:32px;
+            border-radius:16px;
+            font-size:16px;
+        }
+    </style>
 </html>
