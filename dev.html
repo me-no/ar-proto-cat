@@ -12,6 +12,9 @@
         <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
         -->
         <script src="dist/aframe-gif-shader.min.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -589,17 +592,29 @@
 
 
         <div class="msg-wrapper">
-            <p>▼　マーカーを　カメラで　見てみよう　▼</p>
+            <p>マーカーを　カメラで　見てみよう</p>
         </div>
-        <div class="btn-wrapper">
-            <button id="btn" rotation="45 0 0">test</button>
+        <div class="marker-frame-wrapper" id="marker_frame_wrapper">
+            <img src="./assets/ar-frame-ex.png" />
         </div>
 
     </body>
 
+    <script>
+        setTimeout(function() {
+            $('#marker_frame_wrapper').fadeOut('fast');
+        }, 5000); // <-- time in milliseconds
+        
+    </script>
+
     <style>
         .msg-wrapper {
-            background-color:rgba(255,255,255,0.5);
+            /*
+            background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('./assets/msg-wrapper.gif');
+            background-size: contain;
+            background-color: rgba(255,255,255,0.5);
+            border:solid 4px rgba(0,0,0,0.5);
+            */
             position: absolute;
             display:flex;
             flex-direction:column;
@@ -607,24 +622,21 @@
             left:5%;
             width:90%;
             padding:32px 16px;
-            border:solid 4px rgba(0,0,0,0.5);
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
         }
         .msg-wrapper p {
             margin:auto;
         }
+        .marker-frame-wrapper {
+            position:absolute;
+            top:25%;
+            left:10%;
+        }
+        .marker-frame-wrapper img {
+            width:80vw;
+            opacity:0.5;
+        }
 
-        .btn-wrapper {
-            position: absolute;
-            display: flex;
-            flex-direction: row;
-            bottom: 3%;
-            left: 3%;
-        }
-        #btn {
-            width:64px;
-            height:32px;
-            border-radius:16px;
-            font-size:16px;
-        }
     </style>
 </html>
