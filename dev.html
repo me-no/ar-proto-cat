@@ -12,6 +12,9 @@
         <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
         -->
         <script src="dist/aframe-gif-shader.min.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -38,9 +41,10 @@
                 <a-entity 
                     geometry="primitive:plane;"
                     rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/cat.gif);opacity:1"></a-entity>
+                    material="shader:gif;src:url(assets/ar-cat.gif);opacity:1"></a-entity>
             </a-marker>
 
+            <!--
             <a-marker
                 type="pattern"
                 preset="custom"
@@ -55,6 +59,7 @@
                     rotation="-90 0 0"
                     material="shader:gif;src:url(assets/yacht.gif);opacity:1"></a-entity>
             </a-marker>
+            -->
 
             <a-marker
                 type="pattern"
@@ -68,7 +73,18 @@
                 <a-entity 
                     geometry="primitive:plane;" 
                     rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/ar-firefly.gif);opacity:1"></a-entity>
+                    position="0 0 0"
+                    material="shader:gif;src:url(assets/ar-firefly-b.gif);opacity:1;transparent: true"></a-entity>
+                <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    position="0 0.3 0"
+                    material="shader:gif;src:url(assets/ar-firefly-m.gif);opacity:1;transparent: true"></a-entity>
+                    <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    position="0 1 0"
+                    material="shader:gif;src:url(assets/ar-firefly-f.gif);opacity:1;transparent: true"></a-entity>
             </a-marker>
 
             <!-- 完成したもの -->
@@ -208,7 +224,33 @@
                     material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1"></a-entity>
             </a-marker>
 
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-logo-marker.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="0 0 1"
+                material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1;transparent:true"></a-entity>
+            <a-entity 
+                geometry="primitive:plane;" 
+                rotation="0 0 2"
+                material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1;transparent:true"></a-entity>
+            </a-marker>
+
+
             <!-- 完成したもの　ここまで -->
+
+
+
+
+
+
             <!--
             <a-marker
                 type="pattern"
@@ -586,5 +628,64 @@
 
             <a-entity camera></a-entity>
         </a-scene>
+
+
+        <div class="msg-wrapper">
+            <p>マーカーを　カメラで　見てみよう</p>
+        </div>
+        <div class="marker-frame-wrapper" id="marker_frame_wrapper">
+            <img src="./assets/ar-frame-ex.png" />
+        </div>
+
     </body>
+
+    <script>
+        setTimeout(function() {
+            $('#marker_frame_wrapper').fadeOut('fast');
+        }, 5000); // <-- time in milliseconds
+        
+    </script>
+
+    <style>
+        .msg-wrapper {
+            /*
+            background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('./assets/msg-wrapper.gif');
+            background-size: contain;
+            background-color: rgba(255,255,255,0.5);
+            border:solid 4px rgba(0,0,0,0.5);
+            */
+            position: absolute;
+            display:flex;
+            flex-direction:column;
+            top:3%;
+            left:0;
+            width:90%;
+            padding:32px 16px;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+        }
+        .msg-wrapper p {
+            margin:auto;
+        }
+        .marker-frame-wrapper {
+            position:absolute;
+            top:25%;
+            left:0;
+            right:0;
+            margin:auto;
+            text-align:center;
+            @media all and (orientation:landscape) {
+                top:15%;
+            }
+        }
+        .marker-frame-wrapper img {
+            width:80vw;
+            opacity:0.5;
+            @media all and (orientation:landscape) {
+                width:auto;
+                height:80vh;
+            }
+        }
+
+    </style>
 </html>
