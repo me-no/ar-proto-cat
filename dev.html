@@ -224,6 +224,19 @@
                     material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1"></a-entity>
             </a-marker>
 
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/h17_guitar.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+            <a-entity 
+                    geometry="primitive:plane;" 
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/h17_ukulele.gif);opacity:1"></a-entity>
+            </a-marker>
 
             <!-- 夏ドロゴ -->
             <a-marker
@@ -234,17 +247,18 @@
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
             >
+
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="0 0 -1"
+                scale="1.5"
+                material="shader:gif;src:url(assets/daiseikou.gif);opacity:1;transparent:true"></a-entity>
+
             <a-entity 
                 geometry="primitive:plane;" 
                 position="1 0 -0.75"
                 scale="0.5"
                 material="shader:gif;src:url(assets/h17_ukulele.gif);opacity:1;transparent:true"></a-entity>
-            <a-entity 
-                geometry="primitive:plane;" 
-                position="0 0 -0.75"
-                scale="1"
-                material="shader:gif;src:url(assets/daiseikou.gif);opacity:1;transparent:true"></a-entity>
-
             <a-entity 
                 geometry="primitive:plane;" 
                 position="-1 0 -0.75"
