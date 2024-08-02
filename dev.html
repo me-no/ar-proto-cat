@@ -248,11 +248,33 @@
                 cursor="fuse: false; rayOrigin: mouse;"
             >
 
+
             <a-entity 
                 geometry="primitive:plane;" 
-                position="0 0 -1"
-                scale="1.5"
-                material="shader:gif;src:url(assets/daiseikou.gif);opacity:1;transparent:true"></a-entity>
+                position="0 0 0"
+                rotation="-90 0 0"
+                scale="0.5 0.5 0.5"
+                material="shader:gif;src:url(assets/daiseikou8x8.gif);opacity:1;transparent:true"></a-entity>
+
+
+
+
+
+
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="-0.5 0 -1.25"
+                scale="1"
+                material="shader:gif;src:url(assets/ar-cat.gif);opacity:1;transparent:true"></a-entity>
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="0.5 0 -1.25"
+                scale="1"
+                material="shader:gif;src:url(assets/ar-firefly-m.gif);opacity:1;transparent:true"></a-entity>
+
+
+
+
 
             <a-entity 
                 geometry="primitive:plane;" 
@@ -277,37 +299,39 @@
                 scale="0.5"
                 material="shader:gif;src:url(assets/h30-schooldesk.gif);opacity:1;transparent:true"></a-entity>
 
-                <a-entity 
-                geometry="primitive:plane;" 
-                position="0 0 0"
-                scale="1"
-                material="shader:gif;src:url(assets/ar-cat.gif);opacity:1;transparent:true"></a-entity>
 
             <a-entity 
                 geometry="primitive:plane;" 
-                position="0.5 0 0.25"
+                position="0 1 0"
+                scale="1"
+                material="shader:flat;src:url(assets/natsudo-kun.png);opacity:1;transparent:true"></a-entity>
+
+
+            <a-entity 
+                geometry="primitive:plane;" 
+                position="0.5 0.25 0.5"
                 scale="0.5"
                 material="shader:gif;src:url(assets/h32-beetle-xs.gif);opacity:1;transparent:true"></a-entity>
             <a-entity 
                 geometry="primitive:plane;" 
-                position="-0.5 0 0.25"
+                position="-0.5 0.25 0.5"
                 scale="0.5"
                 material="shader:gif;src:url(assets/h21-shavedice.gif);opacity:1;transparent:true"></a-entity>
 
 
             <a-entity 
                 geometry="primitive:plane;" 
-                position="0.25 0 0.5"
+                position="0.25 0 0.75"
                 scale="0.5"
                 material="shader:gif;src:url(assets/m08-outline.gif);opacity:1;transparent:true"></a-entity>
             <a-entity 
                 geometry="primitive:plane;" 
-                position="-0.25 0 0.5"
+                position="-0.25 0 0.75"
                 scale="0.5"
                 material="shader:gif;src:url(assets/h31-ring.gif);opacity:1;transparent:true"></a-entity>
             <a-entity 
                 geometry="primitive:plane;" 
-                position="0 0 0.75"
+                position="0 0 1"
                 scale="0.5"
                 material="shader:gif;src:url(assets/m05_wolf.gif);opacity:1;transparent:true"></a-entity>
             </a-marker>
@@ -732,6 +756,7 @@
             padding:32px 16px;
             color: #fff;
             text-shadow: 1px 1px 2px #000;
+            z-index:1;
         }
         .msg-wrapper p {
             margin:auto;
