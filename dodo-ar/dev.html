@@ -51,10 +51,9 @@
         </div>
 
         <div id="HeadText" style="visibility:visible;">
-            <img src="./assets/Tresure_Loop.gif">
+            <img src="./assets/arika-searching.gif">
         </div>
         <div class="marker-frame-wrapper" id="marker_frame_wrapper">
-            <img src="./assets/ar-frame-ex.png" />
         </div>
 
     </body>
@@ -64,29 +63,43 @@
             $('#marker_frame_wrapper').fadeOut('fast');
         }, 5000); // <-- time in milliseconds
         
-        let m = document.querySelector("a-marker")
-            m.addEventListener("markerFound", (e)=>{
+        let m = document.querySelector("a-marker");
+        let player = document.getElementById("HeadText");
+        let img = player.getElementsByTagName('img')[0];
+
+        m.addEventListener("markerFound", (e)=>{
             console.log("found")
-            document.getElementById("HeadText").style.visibility = "hidden";
+            //document.getElementById("HeadText").style.visibility = "hidden";
+            img.src = './assets/arika-discovered.gif';
+            player.style.left=0;
         })
 
         m.addEventListener("markerLost", (e)=>{
             console.log("lost");
-            document.getElementById("HeadText").style.visibility = "visible";
+            //document.getElementById("HeadText").style.visibility = "visible";
+            img.src = './assets/arika-searching.gif';
+            player.style.left='';
         })
     </script>
 
     <style>
         #HeadText {
             position: absolute;
+            /*  中央表示用
             top: 0;
             left: 0;
-            z-index: 10000;
             right: 0;
             bottom: 0;
+            */
+            bottom:0;
+            right:0;
             margin: auto;
+            z-index: 10000;
             width: fit-content;
             height: fit-content;
+        }
+        #HeadText img {
+            width:256px;
         }
 
         @font-face {
