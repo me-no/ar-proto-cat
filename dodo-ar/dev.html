@@ -71,14 +71,14 @@
             console.log("found")
             //document.getElementById("HeadText").style.visibility = "hidden";
             img.src = './assets/arika-discovered.gif';
-            player.style.left=0;
+            //player.style.left=0;
         })
 
         m.addEventListener("markerLost", (e)=>{
             console.log("lost");
             //document.getElementById("HeadText").style.visibility = "visible";
             img.src = './assets/arika-searching.gif';
-            player.style.left='';
+            //player.style.left='';
         })
     </script>
 
@@ -91,6 +91,7 @@
             right: 0;
             bottom: 0;
             */
+            left:0;
             bottom:0;
             right:0;
             margin: auto;
