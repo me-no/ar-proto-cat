@@ -27,12 +27,12 @@
             gesture-detector
         >
 
-            <!-- プロトタイプ -->
+            <!-- 当たりパターン -->
 
             <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/pattern-ar-cat.patt"
+                url="assets/pattern-atari-00.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -40,8 +40,152 @@
                 <a-entity 
                     geometry="primitive:plane;"
                     rotation="-90 0 0"
-                    material="shader:gif;src:url(assets/Tresure-smaller.gif);opacity:1"></a-entity>
+                    material="shader:gif;src:url(assets/Tresure.gif);opacity:1"></a-entity>
             </a-marker>
+
+            <!-- 当たりパターンおわり -->
+
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-hazure-normal.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/Tresure_MimicNormal.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-hazure-gaburi.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/Tresure_MimicGabu_Loop.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-hazure-heart.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/Tresure_MimicHeart_Loop.gif);opacity:1"></a-entity>
+            </a-marker>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 当たりパターン -->
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-atari-00-w.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/Tresure.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <!-- 当たりパターンおわり -->
+
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-hazure-normal-w.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/Tresure_MimicNormal.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-hazure-gaburi-w.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/Tresure_MimicGabu_Loop.gif);opacity:1"></a-entity>
+            </a-marker>
+
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/pattern-hazure-heart-w.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity 
+                    geometry="primitive:plane;"
+                    rotation="-90 0 0"
+                    material="shader:gif;src:url(assets/Tresure_MimicHeart_Loop.gif);opacity:1"></a-entity>
+            </a-marker>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <a-entity camera></a-entity>
         </a-scene>
