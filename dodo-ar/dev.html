@@ -52,7 +52,7 @@
             <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/pattern-hazure-normal-w.patt"
+                url="assets/pattern-hazure-normal-notsymmetric.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -124,13 +124,15 @@
 
         m.forEach((marker) => {
             marker.addEventListener("markerFound", (e)=>{
-                console.log("found")
-                //document.getElementById("HeadText").style.visibility = "hidden";
+                //console.log("found")
+                let entity = marker.getElementsByTagName('a-entity')[0];
+                let material_org = entity.getAttribute('material');
+                entity.setAttribute('material', material_org);
                 img.src = './assets/arika-discovered.gif';
                 //player.style.left=0;
             })
             marker.addEventListener("markerLost", (e)=>{
-                console.log("lost");
+                //console.log("lost");
                 //document.getElementById("HeadText").style.visibility = "visible";
                 img.src = './assets/arika-searching.gif';
                 //player.style.left='';
