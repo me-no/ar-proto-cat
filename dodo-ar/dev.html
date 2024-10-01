@@ -106,7 +106,7 @@
         </div>
 
         <div id="HeadText" style="visibility:visible;">
-            <img src="./assets/arika-searching.gif">
+            <img src="./assets/tansaku_ver2.gif">
         </div>
         <div class="marker-frame-wrapper" id="marker_frame_wrapper">
         </div>
@@ -128,13 +128,13 @@
                 let entity = marker.getElementsByTagName('a-entity')[0];
                 let material_org = entity.getAttribute('material');
                 entity.setAttribute('material', material_org);
-                img.src = './assets/arika-discovered.gif';
+                img.src = './assets/hakken_ver2.gif';
                 //player.style.left=0;
             })
             marker.addEventListener("markerLost", (e)=>{
                 //console.log("lost");
                 //document.getElementById("HeadText").style.visibility = "visible";
-                img.src = './assets/arika-searching.gif';
+                img.src = './assets/tansaku_ver2.gif';
                 //player.style.left='';
             })
         });
