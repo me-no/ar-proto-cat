@@ -118,15 +118,12 @@
         // for resetting gif
         const m_heart = document.getElementById("m_heart");
         const en = m_heart.querySelector('a-entity');
-
-        /*
         window.onload=function() {
             if(en){
                 en.gif.pause;
                 console.log('paused');
             }
         }
-            */
 
         setTimeout(function() {
             $('#marker_frame_wrapper').fadeOut('fast');
@@ -136,39 +133,19 @@
         let player = document.getElementById("HeadText");
         let img = player.getElementsByTagName('img')[0];
 
-        window.onload = function() {
-            m.forEach(marker => {
-                marker.querySelector('a-entity').gif.pause;
-                console.log(marker + "paused");
-            });
-        }
-        /*
-        m.forEach((marker) => {
-            let m_en = marker.querySelector('a-entity');
-            if(m_en) {
-                m_en.gif.pause;
-                console.log(m_en + 'paused');
-            }
-        });
-        */
-
         m.forEach((marker) => {
             marker.addEventListener("markerFound", (e)=>{
                 let entity = marker.getElementsByTagName('a-entity')[0];
                 let material_org = entity.getAttribute('material');
                 entity.setAttribute('material', material_org);
                 img.src = './assets/hakken_ver2.gif';
-                entity.gif.play;
-                /*
                 if(m === m_heart) {
                     en.gif.play;
                     console.log('started');
                 }
-                    */
             })
             marker.addEventListener("markerLost", (e)=>{
-                let entity = marker.getElementsByTagName('a-entity')[0];
-                entity.gif.pause;
+                //document.getElementById("HeadText").style.visibility = "visible";
                 img.src = './assets/tansaku_ver2.gif';
                 //player.style.left='';
             })
