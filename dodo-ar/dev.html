@@ -118,6 +118,7 @@
         // for resetting gif
         const m_heart = document.getElementById("m_heart");
         const en = m_heart.querySelector('a-entity');
+
         /*
         window.onload=function() {
             if(en){
@@ -135,6 +136,13 @@
         let player = document.getElementById("HeadText");
         let img = player.getElementsByTagName('img')[0];
 
+        window.onload = function() {
+            m.forEach(marker => {
+                marker.querySelector('a-entity').gif.pause;
+                console.log(marker + "paused");
+            });
+        }
+        /*
         m.forEach((marker) => {
             let m_en = marker.querySelector('a-entity');
             if(m_en) {
@@ -142,6 +150,7 @@
                 console.log(m_en + 'paused');
             }
         });
+        */
 
         m.forEach((marker) => {
             marker.addEventListener("markerFound", (e)=>{
