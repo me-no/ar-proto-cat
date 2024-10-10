@@ -163,9 +163,7 @@
         m.forEach((marker) => {
             marker.addEventListener("markerFound", (e)=>{
                 let entity = marker.getElementsByTagName('a-entity')[0];
-                //let material_org = entity.getAttribute('material');
-                //entity.setAttribute('material', material_org);
-                img.src = './assets/hakken_ver2.gif';
+                let en_gif = entity.components.material.el.gif;
                 if(m === m_heart) {
                     //en.gif.play;
                     //en.components.material.el.gif.play();
@@ -177,14 +175,22 @@
                 }
 
                 // play gif animation
-                entity.components.material.el.gif.play();
+                en_gif.play();
                 console.log('start',entity);
                 
+                img.src = './assets/hakken_ver2.gif';
             })
             marker.addEventListener("markerLost", (e)=>{
-                //document.getElementById("HeadText").style.visibility = "visible";
+                let entity = marker.getElementsByTagName('a-entity')[0];
+                let en_gif = entity.components.material.el.gif;
+                en_gif.pause();
+                for(let i=0;i<1000;i++) {
+                    en_gif.nextFrame();
+                }
+
                 img.src = './assets/tansaku_ver2.gif';
                 //player.style.left='';
+
             })
         });
 
