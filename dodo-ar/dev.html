@@ -70,6 +70,7 @@
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
+                id="m_gabu"
             >
                 <a-entity 
                     geometry="primitive:plane;"
@@ -133,12 +134,20 @@
     <script>
         // for resetting gif
         const m_heart = document.getElementById("m_heart");
+        const m_gabu = document.getElementById("m_gabu");
         const en = m_heart.querySelector('a-entity');
+        const en_gabu = m_gabu.querySelector('a-entity');
+        let gif_gabu=[];
         window.onload=function() {
             if(en){
                 //en.gif.pause;
                 en.components.material.el.gif.pause();
                 console.log('paused',en.components.material.el.gif.paused());
+            }
+            if(en_gabu){
+                //en.gif.pause;
+                gif_gabu = en_gabu.components.material.el.gif;
+                en_gabu.components.material.el.gif.pause();
             }
         }
 
@@ -158,8 +167,11 @@
                 img.src = './assets/hakken_ver2.gif';
                 if(m === m_heart) {
                     //en.gif.play;
-                    en.components.material.el.gif.play();
+                    //en.components.material.el.gif.play();
                     console.log('started',en.components.material.el.gif.paused());
+                }
+                if(m === m_gabu) {
+                    en_gabu.components.material.el.gif = gif_gabu;
                 }
             })
             marker.addEventListener("markerLost", (e)=>{
