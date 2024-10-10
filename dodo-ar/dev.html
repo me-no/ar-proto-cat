@@ -136,8 +136,9 @@
         const en = m_heart.querySelector('a-entity');
         window.onload=function() {
             if(en){
-                en.gif.pause;
-                console.log('paused');
+                //en.gif.pause;
+                en.components.material.el.gif.pause();
+                console.log('paused',en.components.material.el.gif.paused());
             }
         }
 
@@ -156,8 +157,9 @@
                 entity.setAttribute('material', material_org);
                 img.src = './assets/hakken_ver2.gif';
                 if(m === m_heart) {
-                    en.gif.play;
-                    console.log('started');
+                    //en.gif.play;
+                    en.components.material.el.gif.play();
+                    console.log('started',en.components.material.el.gif.paused());
                 }
             })
             marker.addEventListener("markerLost", (e)=>{
